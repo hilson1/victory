@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate | Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="C:\Users\user\Desktop\demo victory real\img\main\logo.png" alt="Real Estate Logo">
+        </div>
+        <h1>VICTORY DEVELOPERS PVT. LTD</h1>
+        <nav>
+            <ul>
+                <li><a href="#home" onclick="showSection('home')">Home</a></li>
+                <li><a href="#listings" onclick="showSection('listings')">Listings</a></li>
+                <li><a href="#contact" onclick="showSection('contact')">Contact</a></li>
+            </ul>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search properties...">
+                <button onclick="performSearch()">🔍</button>
+            </div>
+        </nav>
+        <div id="searchResults"></div>
+        </nav>
+    </header>
+    
+    
+    <section id="home" class="section active">
+        <div class="hero">
+            <div class="hero-content">
+                <img src="C:\Users\user\Desktop\demo victory real\img\main\Cover.png">
+                <h2>Find Your Dream Home</h2>
+                <p>Discover the best properties at the best prices.</p>
+                <button onclick="showSection('listings')" class="btn-view-listings">View Listings</button>
+            </div>
+        </div>
+    </section>
+    <section class="popular-categories">
+        <h2>Popular Categories</h2>
+        <div class="category-container">
+            <a href="house.html" class="category">
+                <img src="C:\Users\user\Desktop\demo victory real\img\icons\House icon.png" alt="House">
+                <h3>House</h3>
+                <p>4034</p>
+            </a>
+            <a href="lands.html" class="category">
+                <img src="C:\Users\user\Desktop\demo victory real\img\icons\Land icon.png" alt="Land">
+                <h3>Land</h3>
+                <p>2126</p>
+            </a>
+        </div>
+    </section>
+     <section id="listings" class="section">
+        <h2>Featured Listings</h2>
+        <div class="property-list">
+            <div class="property">
+                <img src="C:\Users\user\Desktop\demo victory real\img\property\Property 001.jpeg" alt="House 1">
+                <h3>Bungmati Karyabinayak Temple</h3>
+                <p>Land: 8 Aana Total</p>
+                <p>Price: Rs23 Lakh Per Aana only</p>
+                <p>Contact Us: 9818009740, 9818769132</p>
+                
+            </div>
+            <div class="property">
+                <img src="C:\Users\user\Desktop\demo victory real\img\property\Property002.jpeg"alt="House 2">
+                <h3>Modern Apartment</h3>
+                <p>$350,000</p>
+            </div>
+        </div>
+    </section>
+   
+    
+    
+    
+    <section id="contact" class="section">
+        <h2>Contact Us</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+    
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="C:\Users\user\Desktop\demo victory real\img\main\logo.png" alt="Company Logo">
+                <p>Siddhipur Chowk<br>Sanagaun, Lalitpur 44705</p>
+                <p>+977 9767920327<br>+977 9818769132</p>
+                <p><a href="mailto:support@company.com">victorydevelopers.com</a></p>
+            </div>
+            <div class="footer-links">
+                <ul class="nav-links">
+                    <li class="dropdown">
+                        <a href="#"><strong>Properties:</strong></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="house.html">House</a></li><br>
+                            <li><a href="lands.html">Land</a></li><br>
+                        </ul>
+                    </li>
+                </ul>
+              
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><strong>Resources:</strong></li>
+                    <li><a href="#">News</a></li>
+                    <li><a href="#">Advertise</a></li>
+                    <li><a href="#">Agencies</a></li>
+                    <li><a href="#">Home Loan</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <p><strong>Follow us:</strong></p>
+                <div class="social-icons">
+                    <a href="#"><img src="C:\Users\user\Desktop\demo victory real\img\icons\facebook.png" alt="Facebook"></a>
+                    <a href="#"><img src="C:\Users\user\Desktop\demo victory real\img\icons\instagram.png" alt="Instagram"></a>
+                    <a href="#"><img src="C:\Users\user\Desktop\demo victory real\img\icons\whatsapp.png" alt="Whatsapp"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Disclaimer: The information displayed on this website is for informational purposes only. It does not constitute legal advice.</p>
+            <p>&copy; Victory Developers Pvt. Ltd. All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+    
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+                section.style.display = 'none';
+            });
+            document.getElementById(sectionId).classList.add('active');
+            document.getElementById(sectionId).style.display = 'block';
+        }
+        
+        // Initialize by showing only the home section
+        document.addEventListener("DOMContentLoaded", () => {
+            showSection('home');
+        });
+        document.addEventListener("DOMContentLoaded", () => {
+    const currentPage = document.body.getAttribute("data-page"); // Example: "home", "contact", "listing"
+    if (currentPage !== "home") {
+        document.querySelector("#home-page").style.display = "none";
+    }
+});
+// Sorted list of properties for binary search
+const properties = [
+    "Lalitpur",
+    "Bungalow in Kathmandu",
+    "Commercial Land in Pokhara",
+    "Flat in New York",
+    "House in Sydney",
+    "Villa in Dubai",
+    "Warehouse in Delhi"
+];
+
+// Binary Search Function
+function binarySearch(arr, target) {
+    let left = 0;
+    let right = arr.length - 1;
+
+    while (left <= right) {
+        let mid = Math.floor((left + right) / 2);
+        if (arr[mid].toLowerCase() === target.toLowerCase()) {
+            return mid; // Found the property
+        } else if (arr[mid].toLowerCase() < target.toLowerCase()) {
+            left = mid + 1;
+        } else {
+            right = mid - 1;
+        }
+    }
+    return -1; // Not found
+}
+
+// Search Function
+function performSearch() {
+    let searchInput = document.getElementById("searchInput").value.trim();
+    let index = binarySearch(properties, searchInput);
+
+    let resultDiv = document.getElementById("searchResults");
+    if (searchInput === "") {
+        resultDiv.innerHTML = ""; // Clear results if input is empty
+        return;
+    }
+    
+    if (index !== -1) {
+        resultDiv.innerHTML = `<p>✅ Found: ${properties[index]}</p>`;
+    } else {
+        resultDiv.innerHTML = `<p>❌ No results found.</p>`;
+    }
+}
+
+
+    </script>
+</body>
+</html>
